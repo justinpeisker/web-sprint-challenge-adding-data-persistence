@@ -1,9 +1,14 @@
+const db = require('../../data/dbConfig')
+
 function getAll(){
-    return Promise.resolve('get all tasks')
+    return db('projects')
 }
 
-function add() {
-    return Promise.resolve('added task')
+function add(project) {
+    return db('projects').insert(project)
+    .then(([project_id]) => {
+      return getById(project_id)
+    })
 }
 
 module.exports = {
