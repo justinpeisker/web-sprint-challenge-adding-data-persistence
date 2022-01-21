@@ -4,9 +4,9 @@ async function getAll(){
     const rows = await db('projects')
     const result = rows.map(item => {
         return{
-        project_name: item.project_name,
-        project_description: item.project_description,
-        project_completed: item.project_completed
+            project_name: item.project_name,
+            project_description: item.project_description,
+            project_completed: Boolean(item.project_completed)
         }
     })
     return result
