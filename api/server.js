@@ -16,7 +16,7 @@ server.use('/api/tasks', taskRouter);
 
 server.use((err, req, res, next) => {
     res.status(500).json({
-        customMessage: 'oops',
+        customMessage: 'Error Middleware',
         message: err.message,
         stack: err.stack
     })
