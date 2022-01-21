@@ -1,7 +1,9 @@
 const db = require('../../data/dbConfig')
 
-function getAll(){
-    return db('projects')
+async function getAll(){
+    const rows = await db('projects')
+
+    return rows
 }
 
 const getById = (id) => {

@@ -3,6 +3,10 @@ const db = require('../../data/dbConfig')
 async function getAll(){
     const rows = await db('tasks as t')
         .leftJoin('projects as p', 't.project_id', 'p.project_id')
+
+    const result = {
+
+    }
     return rows
 
 }
