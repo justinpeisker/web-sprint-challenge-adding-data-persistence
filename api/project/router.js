@@ -1,15 +1,15 @@
-const router = require('express').Router()
+const projectRouter = require('express').Router()
+const Project = require('./model')
 
-router.use('*', (req, res) => {
-    res.json({api: 'project router up'})
-})
-
-router.use((err, req, res, next) => {
-    res.status(500).json({
-        customMessage: 'oops',
-        message: err.message,
-        stack: err.stack
+projectRouter.get('/', (req, res, next) =>{
+    Project.getAll()
+    .then(projects => {
+        res.json(projects)
     })
 })
 
-module.exports = router
+
+
+
+
+module.exports = projectRouter
