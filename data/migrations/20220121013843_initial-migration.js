@@ -31,8 +31,6 @@ exports.up = async function(knex) {
             .inTable('projects')
             .onDelete('RESTRICT')
             .onUpdate('RESTRICT')
-
-
     })
 };
 
