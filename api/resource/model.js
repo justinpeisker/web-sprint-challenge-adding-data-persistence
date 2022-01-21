@@ -1,13 +1,13 @@
 const db = require('../../data/dbConfig')
 
 function getAll(){
-    return db('projects')
+    return db('resources')
 }
 
-function add(project) {
-    return db('projects').insert(project)
-    .then(([project_id]) => {
-      return getById(project_id)
+function add(resource) {
+    return db('resources').insert(resource)
+    .then(([resource_id]) => {
+      return getById(resource_id)
     })
 }
 
