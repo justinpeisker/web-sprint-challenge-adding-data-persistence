@@ -4,10 +4,16 @@ async function getAll(){
     const rows = await db('tasks as t')
         .leftJoin('projects as p', 't.project_id', 'p.project_id')
 
-    const result = {
-
-    }
-    return rows
+        const result = rows.map(item => {
+            return{
+                task_description: item.task_description,
+                task_notes: item.task_notes,
+                task_completed: Boolean(item.task_completed),
+                project_name: item.project_name,
+                project_description: item.project_description
+            }
+        })
+    return result
 
 }
 // select * 
