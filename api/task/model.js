@@ -14,12 +14,7 @@ async function getAll(){
             }
         })
     return result
-
 }
-// select * 
-//     tasks as t
-//     leftJoin projects as p
-//         on t.project_name = p.user_id
 
 const getById = async (id) => {
     const rows = await db('tasks')
@@ -34,7 +29,7 @@ const getById = async (id) => {
         project_description: rows.project_description
     }
     return result;
-  }
+}
 
 function add(task) {
     return db('tasks').insert(task)

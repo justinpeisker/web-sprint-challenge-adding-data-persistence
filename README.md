@@ -111,6 +111,18 @@ Build an API inside the `api` folder with endpoints for:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+    Relational Databases consist of data that is grouped into rows and columns.  A row in a relational database represents one record.
+    SQL is a standard language what programmers use to 'talk' to relational databases.  SQL is usually used with a wrapper like knex.js
+
 2. Why do tables need a Primary Key?
+
+    Primary keys are necessary because they are a unique identifier for each entry in a given database.  They also play an essential role when dealing with multiple tables.  A foreign key will point to the primary key of another table. 
+   
 3. What is the name given to a table column that references the Primary Key on another table?
+
+    This is called a foreign key.   Foreign keys are essential to creating links from one data table to another. Foreign keys are incredibly useful in eliminating redundancy and errors.  They allow data point on a table to point to many data points living on a row in another table.  I see them as 'portals' to more data.
+  
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+  In order to have a many to many relationship between two tables you must have an intermediary table.  This table would consist of many foreign keys pointing to many tables.

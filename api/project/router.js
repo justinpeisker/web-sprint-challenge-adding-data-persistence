@@ -18,6 +18,4 @@ projectRouter.post('/', (req, res, next) => {
     .catch(next)
 })
 
-
-
 module.exports = projectRouter

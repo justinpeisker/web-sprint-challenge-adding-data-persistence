@@ -6,7 +6,7 @@ function getAll(){
 
 const getById = (id) => {
     return db('resources').where('resource_id', id).first()
-  }
+}
 
 function add(resource) {
     return db('resources').insert(resource)
