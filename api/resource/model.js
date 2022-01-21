@@ -4,14 +4,19 @@ function getAll(){
     return db('resources')
 }
 
+const getById = (id) => {
+    return db('resources').where('resource_id', id).first()
+  }
+
 function add(resource) {
     return db('resources').insert(resource)
-    .then(([resource_id]) => {
-      return getById(resource_id)
-    })
+    .then(([id]) => {
+        return getById(id)
+      })
 }
 
 module.exports = {
     getAll,
-    add
+    add,
+    getById
 }
